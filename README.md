@@ -26,37 +26,21 @@ rm intel-image-classification.zip
 ####     ├── mountain
  ####    ├── sea
   ####    └── street
+## Models 
 
-## Models
-1. Custom CNN Model
+Each model is trained to classify images into one of the following categories: **buildings**, **forest**, **glacier**, **mountain**, **sea**, or **street**. Here's a brief overview of each model's architecture and its predictive capabilities:
 
-- Architecture: Custom defined CNN model with convolutional layers, max pooling, dropout, and dense layers.
-- File: cnn_model.py
-- Training: Trained with ImageDataGenerator for data augmentation.
+- **Custom CNN**: A custom convolutional neural network designed specifically for this project, capable of learning spatial hierarchies in images and predicting the correct category.
+
+- **VGG16**: Utilizes transfer learning from a pre-trained VGG16 model on ImageNet, leveraging its deep architecture to recognize intricate patterns in images for accurate classification.
+
+- **ResNet50**: Another transfer learning approach using ResNet50, known for its residual blocks that help in training deeper networks effectively, enhancing accuracy in image classification tasks.
+
+- **InceptionV3**: Employs the InceptionV3 architecture, which uses multiple filters at each layer to capture complex features in images, thus improving the model's ability to distinguish between different categories.
+
+- **MobileNetV2**: Optimized for mobile and embedded vision applications, MobileNetV2 provides a lightweight yet powerful solution for image classification tasks, balancing between accuracy and computational efficiency.
   
-2. VGG16 Model
 
-- Architecture: Transfer learning using VGG16 pre-trained on ImageNet.
-- File: vgg16_model.py
-- Training: Fine-tuned with additional dense layers.
-  
-3. ResNet50 Model
-
-- Architecture: Transfer learning using ResNet50 pre-trained on ImageNet.
-- File: resnet50_model.py
-- Training: Global Average Pooling and dense layers added for classification.
-  
-4. InceptionV3 Model
-
-- Architecture: Transfer learning using InceptionV3 pre-trained on ImageNet.
-- File: inceptionv3_model.py
-- Training: Includes fine-tuning of top layers.
-
-5. MobileNetV2 Model
-
-- Architecture: Transfer learning using MobileNetV2 pre-trained on ImageNet.
-- File: mobilenetv2_model.py
-- Training: Fine-tuned for image classification tasks.
 ## Training
 - Each model is trained using ImageDataGenerator for data augmentation.
 - Training scripts are provided for each model in their respective files (*_model.py).
